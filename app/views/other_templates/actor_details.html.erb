@@ -72,3 +72,23 @@
 
     <th>
     </th>
+    <tr>
+    <%@characters.each do |element|%>
+    <td>
+    <%=Movie.where({:id => element.movie_id }).first.title%>
+    </td>
+    <td>
+    <%=Movie.where({:id => element.movie_id }).first.year%>
+    </td>
+    <td>
+    <%=Director.where({:id => element.id }).first.name%>
+    </td>
+    <td>
+    <%=element.name%>
+    </td>
+    <td>
+    <a href = "/movies/<%=element.movie_id%>">Show Details</a>
+    </td>
+    </tr>
+    <%end%>
+  <table>
